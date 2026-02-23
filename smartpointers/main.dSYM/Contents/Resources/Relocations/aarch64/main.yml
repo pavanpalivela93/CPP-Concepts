@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/pavanpalivela/Downloads/CPP-Concepts/smartpointers/main'
+relocations:     []
+...

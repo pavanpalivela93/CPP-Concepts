@@ -88,23 +88,23 @@ int getint(int value)
 int main()
 {
     int value = 5;
-    // std::thread t1(print, 5);
+    std::thread t1(print, 5);
     // std::thread t2(increment, std::ref(value));
-    // if (t1.joinable())
-    //     t1.join();
+    if (t1.joinable())
+        t1.join();
     // if (t2.joinable())
     //     t2.join();
-    // std::thread t3 = std::move(t1); // only movable
-    // // std::thread t4 = t1; //cannot copy Because only one object should own the thread
-    // std::cout << "value: " << value << std::endl;
+    std::thread t3 = std::move(t1); // only movable
+    // std::thread t4 = t1; //cannot copy Because only one object should own the thread
+    std::cout << "value: " << value << std::endl;
 
-    std::thread t4(increment, std::ref(value));
-    std::thread t5(increment, std::ref(value));
-    std::thread t6(increment, std::ref(value));
+    // std::thread t4(increment, std::ref(value));
+    // std::thread t5(increment, std::ref(value));
+    // std::thread t6(increment, std::ref(value));
 
-    t4.join();
-    t5.join();
-    t6.join();
+    // t4.join();
+    // t5.join();
+    // t6.join();
 
     // 9️⃣ Using Lambda
     int x = 0;
